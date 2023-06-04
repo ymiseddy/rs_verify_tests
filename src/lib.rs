@@ -30,7 +30,7 @@ impl VerifyTest {
      * @param result Result of the test
      * @return bool
      */
-    pub fn verify<T>(self: &VerifyTest, fname: &str, result: &T) -> bool
+    pub fn assert_snapshot<T>(self: &VerifyTest, fname: &str, result: &T) -> bool
         where T: std::cmp::PartialEq + 
             serde::ser::Serialize {
 
