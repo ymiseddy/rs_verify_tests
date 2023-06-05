@@ -131,15 +131,34 @@ structure gets compared with the content of {test_name}.accepted.json. If they
 match, the test passes. If not, {test_name}.received.json gets updated with the
 new serialized data for further review.
 
-## What to commit 
+## What to Commit 
 
-You sould commit all of the `*.accepted.json` to your source code repository, but ignore
-the `*.received.json` files.
+The proper management of snapshot files is crucial to the effective use of
+`verify-tests`. Here are some guidelines on what to commit to your source code
+repository:
 
-Sample to add to .gitignore:
-```
+- **Commit `.accepted.json` files**: All the `*.accepted.json` files should be
+  committed to your source code repository. These files are the accepted
+  snapshots of your tests and serve as the "source of truth" for your test
+  results. By committing these files, you ensure that the correct snapshots are
+  available to all members of your team and the test results remain consistent
+  across different environments.
+
+- **Ignore `.received.json` files**: The `*.received.json` files, on the other
+  hand, should be ignored. These files contain the serialized output of your
+  most recent test run and are used for comparison with the `.accepted.json`
+  files. Because they can change with each test run, they should not be
+  committed to your source code repository. 
+
+Here's a sample snippet you can add to your `.gitignore` file to ensure that
+the `.received.json` files are not tracked by Git:
+
+```bash
+# Ignore snapshot test 'received' files
 *.received.json
 ```
+
+Remember that using version control correctly with your snapshot files ensures that your tests are reproducible across different machines and developers. Moreover, it can help track changes in the behavior of your code over time.
 
 <a name="verifyreview"></a>
 
