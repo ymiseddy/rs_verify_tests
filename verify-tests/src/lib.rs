@@ -37,27 +37,23 @@ impl VerifyTest {
         let received_text = serde_json::to_string_pretty(&result).unwrap()
             .trim().to_string();
     
-
-        let matched: bool;
-        let accepted_text: String; 
-        
         let accepted_path  = self.path.join(format!("{}.accepted.json", fname));
-        if !accepted_path.exists() {
+        let accepted_text = if !accepted_path.exists() {
             fs::write(&accepted_path, "").expect("Unable to write file");
-            accepted_text = "".to_string();
+            "".to_string()
         } else {
-            accepted_text = fs::read_to_string(&accepted_path).expect("Unable to read accepted file");
-        }
+            fs::read_to_string(&accepted_path).expect("Unable to read accepted file")
+        };
 
         // Don't count any whitespace around the JSON
         let accepted_text = accepted_text.trim();
 
-        matched = received_text.eq(&accepted_text);
+        let matched = received_text.eq(&accepted_text);
         if !matched {
             let received_path  = self.path.join(format!("{}.received.json", fname));
             fs::write(&received_path, &received_text).expect("Unable to write received file");
         }
-        assert!(matched);
+        assert!(matched, "Test result does not match accepted result - use verify-review to review.");
         matched
     }
 }

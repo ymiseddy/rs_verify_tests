@@ -1,7 +1,7 @@
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use serde::Serialize;
     use verify_tests::VerifyTest;
 
     static TEST_PATH: &str = "snapshot_tests";
@@ -9,6 +9,7 @@ mod tests {
     #[test]
     fn test_new() {
 
+        #[derive(Serialize,PartialEq)]
         struct Rectangle {
             width: u32,
             height: u32,
