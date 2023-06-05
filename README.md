@@ -1,6 +1,7 @@
-# verify-tests - A rust package for snapshot testing
+# verify-tests 
 
-This is inspired by the C# [Verify](https://github.com/VerifyTests/Verify) library.
+A rust package for tests using snapshots.  This is inspired by the C# 
+[Verify](https://github.com/VerifyTests/Verify) package.
 
 ## Example Usage
 
