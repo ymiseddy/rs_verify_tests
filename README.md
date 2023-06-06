@@ -85,8 +85,9 @@ a testing context:
 ```rust 
 
 #[cfg(test)] 
-mod tests { use super::*; 
-use verify_tests::VerifyTest;
+mod tests { 
+    use super::*; 
+    use verify_tests::VerifyTest;
 
     // Define a path where snapshots will be stored.
     static TEST_PATH: &str = "snapshot_tests";

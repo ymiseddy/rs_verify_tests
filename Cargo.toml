@@ -1,2 +1,2 @@
 [workspace]
-members = ["verify-review", "verify-tests", "examples/basic_usage"]
+members = ["verify-review", "verify-tests", "examples/basic_usage", "tests"]

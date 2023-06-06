@@ -12,3 +12,16 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+
+
+# Special test cases
+ensure_accepted_and_received_files_created_on_new_test.*
+tests/snapshot_results/missing_dir
+
+# Coverage files
+lcov.info
+tarpaulin-report.html
+
+# Generated metrics
+.metrics

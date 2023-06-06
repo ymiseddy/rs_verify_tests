@@ -51,7 +51,7 @@ impl VerifyTest {
         let matched = received_text.eq(&accepted_text);
         if !matched {
             let received_path  = self.path.join(format!("{}.received.json", fname));
-            fs::write(&received_path, &received_text).expect("Unable to write received file");
+            fs::write(received_path, &received_text).expect("Unable to write received file");
         }
         assert!(matched, "Test result does not match accepted result - use verify-review to review.");
         matched
