@@ -8,6 +8,7 @@
 
 </div>
 
+
 `verify-tests` is a Rust package specially designed to streamline and simplify
 your testing process using the snapshot testing strategy. This package is
 inspired by the powerful C# [Verify](https://github.com/VerifyTests/Verify)
