@@ -1,4 +1,12 @@
 # verify-tests 
+<div align="center">
+
+![Build](https://seddy.com/cicd/k987e/build.svg)
+![Code](https://seddy.com/cicd/k987e/code.svg)
+![Test Coverage](https://seddy.com/cicd/k987e/coverage.svg)
+![Awesomeness](https://seddy.com/cicd/k987e/awesome.svg)
+
+</div>
 
 `verify-tests` is a Rust package specially designed to streamline and simplify
 your testing process using the snapshot testing strategy. This package is
